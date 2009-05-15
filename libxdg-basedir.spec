@@ -1,4 +1,5 @@
-%define libxdg %mklibname xdg-basedir 1
+%define major 1
+%define libxdg %mklibname xdg-basedir %{major}
 %define libdev %mklibname xdg-basedir -d
 %define libdevstatic %mklibname xdg-basedir -d -s
 
