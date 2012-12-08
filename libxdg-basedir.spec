@@ -4,7 +4,7 @@
 %define libdevstatic %mklibname xdg-basedir -d -s
 
 Name:		libxdg-basedir
-Version:	1.0.0
+Version:	1.1.1
 Release:	%mkrel 1
 Summary:	The XDG Base Directory specification defines where files should be looked for
 Group:		System/Libraries
@@ -37,7 +37,7 @@ located
 %package -n %{libdev}
 Summary:	Development Files for %{name}
 Group:		Development/Other
-Requires:	%{libxdg} = %{version}
+Requires:	%{name} = %{version}
 Provides:	xdg-basedir-devel = %{version}-%{release}
 
 %description -n %{libdev}
@@ -47,7 +47,6 @@ Development Files for %{name}
 %defattr(-,root,root,-)
 %_includedir/basedir.h
 %_includedir/basedir_fs.h
-%_libdir/libxdg-basedir.la
 %_libdir/libxdg-basedir.so
 %_libdir/pkgconfig/libxdg-basedir.pc
 #------------------------------------------------------------------------------
@@ -55,7 +54,7 @@ Development Files for %{name}
 Summary:	Static development files for %{name}
 Group:		Development/Other
 Requires:	%{libdev} = %{version}
-Provides:	libxdg-basedir-devel = %{version}-%{release}
+Provides:	libxdg-basedir-static-devel = %{version}-%{release}
 
 %description -n %{libdevstatic}
 Static development files for %{name}
@@ -90,4 +89,27 @@ rm -rf %{buildroot}
 %files -n %{libxdg}
 %defattr(-,root,root,-)
 %_libdir/libxdg-basedir.so.1
-%_libdir/libxdg-basedir.so.1.0.0
+%_libdir/libxdg-basedir.so.1.1.0
+
+
+%changelog
+* Sun Aug 08 2010 Rémy Clouard <shikamaru@mandriva.org> 1.1.1-1mdv2011.0
++ Revision: 567673
+- bump release
+- fix file list
+
+* Sat Sep 19 2009 Rémy Clouard <shikamaru@mandriva.org> 1.0.2-1mdv2010.1
++ Revision: 444660
+- bump release
+
+* Thu May 21 2009 Rémy Clouard <shikamaru@mandriva.org> 1.0.1-1mdv2010.0
++ Revision: 378432
+- new upstream release
+
+* Sat May 16 2009 Rémy Clouard <shikamaru@mandriva.org> 1.0.0-1mdv2010.0
++ Revision: 376492
+- fix static provides?\195
+- fix major
+- import libxdg-basedir
+
+
