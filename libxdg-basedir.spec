@@ -43,6 +43,7 @@ Development Files for %{name}.
 %setup -q
 
 %build
+./autogen.sh
 %configure
 
 %make
