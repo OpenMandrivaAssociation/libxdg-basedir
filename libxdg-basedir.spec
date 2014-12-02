@@ -4,8 +4,8 @@
 
 Summary:	The XDG Base Directory specification defines where files should be looked for
 Name:		libxdg-basedir
-Version:	1.1.1
-Release:	8
+Version:	1.2.0
+Release:	1
 Group:		System/Libraries
 License:	MIT
 Url:		https://www.ohloh.net/p/libxdg-basedir
@@ -28,7 +28,7 @@ Provides:	%{name} = %{version}-%{release}
 %description -n %{libxdg}
 The XDG Base Directory Specification defines where should user files be looked
 for by defining one or more base directories relative in with they should be
-located
+located.
 
 %package -n %{devname}
 Summary:	Development Files for %{name}
@@ -37,13 +37,13 @@ Requires:	%{name} = %{version}-%{release}
 Provides:	xdg-basedir-devel = %{version}-%{release}
 
 %description -n %{devname}
-Development Files for %{name}
+Development Files for %{name}.
 
 %prep
-%setup -qn libxdg-basedir-%{version}
+%setup -q
 
 %build
-%configure2_5x --disable-static
+%configure
 
 %make
 
