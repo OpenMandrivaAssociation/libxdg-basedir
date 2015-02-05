@@ -8,8 +8,8 @@ Version:	1.2.0
 Release:	2
 Group:		System/Libraries
 License:	MIT
-Url:		https://www.ohloh.net/p/libxdg-basedir
-Source0:	http://n.ethz.ch/~nevillm/download/libxdg-basedir/libxdg-basedir-%{version}.tar.gz
+Url:		https://github.com/devnev/libxdg-basedir
+Source0:	https://github.com/devnev/libxdg-basedir/archive/%{name}-%{version}.tar.gz
 BuildRequires:	doxygen
 
 %description
