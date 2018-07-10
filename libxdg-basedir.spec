@@ -5,7 +5,7 @@
 Summary:	The XDG Base Directory specification defines where files should be looked for
 Name:		libxdg-basedir
 Version:	1.2.0
-Release:	6
+Release:	7
 Group:		System/Libraries
 License:	MIT
 Url:		https://github.com/devnev/libxdg-basedir
