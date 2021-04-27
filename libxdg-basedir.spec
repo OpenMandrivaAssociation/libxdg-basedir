@@ -4,14 +4,13 @@
 
 Summary:	The XDG Base Directory specification defines where files should be looked for
 Name:		libxdg-basedir
-Version:	1.2.0
-Release:	9
+Version:	1.2.3
+Release:	1
 Group:		System/Libraries
 License:	MIT
 Url:		https://github.com/devnev/libxdg-basedir
 Source0:	https://github.com/devnev/libxdg-basedir/archive/%{name}-%{version}.tar.gz
-Patch0:		xdgGetRelativeHome-overflow.patch
-BuildRequires:	doxygen
+#BuildRequires:	doxygen
 
 %description
 The XDG Base Directory Specification defines where should user files be looked
@@ -41,17 +40,16 @@ Provides:	xdg-basedir-devel = %{version}-%{release}
 Development Files for %{name}.
 
 %prep
-%setup -q
-%patch0 -p0
+%autosetup -p1
 
 %build
 ./autogen.sh
 %configure
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libxdg}
 %{_libdir}/libxdg-basedir.so.%{major}*
@@ -61,4 +59,3 @@ Development Files for %{name}.
 %{_includedir}/basedir_fs.h
 %{_libdir}/libxdg-basedir.so
 %{_libdir}/pkgconfig/libxdg-basedir.pc
-
